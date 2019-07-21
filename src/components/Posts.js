@@ -1,19 +1,22 @@
 import React, { Component } from "react";
+import PropTypes from "prop-types";
+import { connect } from "react-redux";
+import { fetchPosts } from "../actions/postAction";
 
 class Posts extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      posts: []
-    };
+  componentWillMount() {
+    this.props.fetchPosts();
   }
-  componentDidMount() {
-    fetch("https://jsonplaceholder.typicode.com/posts")
-      .then(response => response.json())
-      .then(data => this.setState({ posts: data }));
+
+  // https://hackernoon.com/replacing-componentwillreceiveprops-with-getderivedstatefromprops-c3956f7ce607
+  componentWillReceiveProps(nextProps) {
+    if (nextProps.newPost) {
+      this.props.posts.unshift(nextProps.newPost);
+    }
   }
+
   render() {
-    const postItems = this.state.posts.map(post => (
+    const postItems = this.props.posts.map(post => (
       <div key={post.id}>
         <h3>{post.title}</h3>
         <p>{post.body}</p>
@@ -28,4 +31,18 @@ class Posts extends Component {
   }
 }
 
-export default Posts;
+Posts.propTypes = {
+  fetchPosts: PropTypes.func.isRequired,
+  posts: PropTypes.array.isRequired,
+  newPost: PropTypes.object
+};
+
+const mapToStateProps = state => ({
+  posts: state.posts.items,
+  newPost: state.posts.item
+});
+
+export default connect(
+  mapToStateProps,
+  { fetchPosts }
+)(Posts);
