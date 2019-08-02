@@ -9,10 +9,13 @@ class Comments extends Component {
 
     this.onClick = this.onClick.bind(this);
   }
-  onClick(event, postID) {
+  onClick(event) {
     event.preventDefault();
-
-    this.props.fetchComments(postID);
+    this.props.fetchComments(this.props.postID);
+    const buttonElement = document.getElementsByClassName(
+      `button-${this.props.postID}`
+    );
+    console.log(buttonElement);
   }
 
   render() {
@@ -20,7 +23,7 @@ class Comments extends Component {
       const postID = this.props.postID;
       if (comments.postId === postID) {
         return (
-          <div className="comment">
+          <div className="comment" key={(postID, comments.id)}>
             <h4>{comments.name}</h4>
             <p>{comments.email}</p>
             <p>{comments.body}</p>
@@ -30,7 +33,11 @@ class Comments extends Component {
     });
     return (
       <div>
-        <button type="submit" value={this.props.postID} onClick={this.onClick}>
+        <button
+          className={`button-${this.props.postID}`}
+          type="submit"
+          onClick={this.onClick}
+        >
           Show comments
         </button>
         {comments}
