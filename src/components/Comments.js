@@ -8,7 +8,13 @@ class Comments extends Component {
     const comments = this.props.comments.map(comments => {
       const postID = this.props.postID;
       if (comments.postId === postID) {
-        return <p>{comments.email}</p>;
+        return (
+          <div className="comment">
+            <h4>{comments.name}</h4>
+            <p>{comments.email}</p>
+            <p>{comments.body}</p>
+          </div>
+        );
       }
     });
     return (

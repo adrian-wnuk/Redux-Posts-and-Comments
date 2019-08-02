@@ -33,3 +33,8 @@
     transform: rotate(360deg);
   }
 }
+
+.comment {
+  background-color: #282c34;
+  color: white;
+}
