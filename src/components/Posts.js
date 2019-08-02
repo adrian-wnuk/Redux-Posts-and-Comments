@@ -1,13 +1,12 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
-import { fetchPosts, fetchComments } from "../actions/postActions";
+import { fetchPosts } from "../actions/postActions";
 import Comment from "./Comments";
 
 class Posts extends Component {
   componentDidMount() {
     this.props.fetchPosts();
-    this.props.fetchComments();
   }
   render() {
     const postItems = this.props.posts.map(post => (
@@ -28,7 +27,6 @@ class Posts extends Component {
 
 Posts.propTypes = {
   fetchPosts: PropTypes.func.isRequired,
-  fetchComments: PropTypes.func.isRequired,
   posts: PropTypes.array.isRequired
 };
 
@@ -39,5 +37,5 @@ const mapStateToProps = state => ({
 
 export default connect(
   mapStateToProps,
-  { fetchPosts, fetchComments }
+  { fetchPosts }
 )(Posts);

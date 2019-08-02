@@ -11,8 +11,8 @@ export const fetchPosts = () => dispatch => {
     );
 };
 
-export const fetchComments = () => dispatch => {
-  fetch(`https://jsonplaceholder.typicode.com/comments`)
+export const fetchComments = postID => dispatch => {
+  fetch(`https://jsonplaceholder.typicode.com/comments?postId=${postID}`)
     .then(response => response.json())
     .then(comments =>
       dispatch({
