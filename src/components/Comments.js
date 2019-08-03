@@ -3,6 +3,8 @@ import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { fetchComments } from "../actions/postActions";
 
+import Commentform from "./Commentform";
+
 class Comments extends Component {
   constructor(props) {
     super(props);
@@ -42,6 +44,7 @@ class Comments extends Component {
           Show comments
         </button>
         {comments}
+        <Commentform />
       </div>
     );
   }

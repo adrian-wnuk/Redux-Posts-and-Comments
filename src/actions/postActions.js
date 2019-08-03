@@ -1,4 +1,4 @@
-import { FETCH_POSTS, FETCH_COMMENTS } from "./types";
+import { FETCH_POSTS, FETCH_COMMENTS, ADD_COMMENT } from "./types";
 
 export const fetchPosts = () => dispatch => {
   fetch("https://jsonplaceholder.typicode.com/posts")
@@ -20,4 +20,22 @@ export const fetchComments = postID => dispatch => {
         payload: comments
       })
     );
+};
+
+export const addComment = () => dispatch => {
+  fetch("https://jsonplaceholder.typicode.com/posts", {
+    method: "POST",
+    headers: {
+      "content-type": "application/json"
+    },
+    body: JSON.stringify(postData)
+  })
+    .then(res => res.json())
+    .then(comment =>
+      dispatch({
+        type: ADD_COMMENT,
+        payload: comment
+      })
+    );
+  console.log(postID);
 };

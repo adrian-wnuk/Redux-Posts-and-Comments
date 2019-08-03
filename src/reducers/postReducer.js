@@ -1,8 +1,9 @@
-import { FETCH_POSTS, FETCH_COMMENTS } from "../actions/types";
+import { FETCH_POSTS, FETCH_COMMENTS, ADD_COMMENT } from "../actions/types";
 
 const initalState = {
   posts: [],
-  comments: []
+  comments: [],
+  addedComments: []
 };
 
 export default function(state = initalState, action) {
@@ -16,6 +17,11 @@ export default function(state = initalState, action) {
       return {
         ...state,
         comments: state.comments.concat(action.payload)
+      };
+    case ADD_COMMENT:
+      return {
+        ...state,
+        addedComments: action.payload
       };
     default:
       return state;
