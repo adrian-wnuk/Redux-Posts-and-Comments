@@ -9,13 +9,14 @@ class Comments extends Component {
 
     this.onClick = this.onClick.bind(this);
   }
+  // show comments and hide button
   onClick(event) {
     event.preventDefault();
     this.props.fetchComments(this.props.postID);
     const buttonElement = document.getElementsByClassName(
       `button-${this.props.postID}`
     );
-    console.log(buttonElement);
+    buttonElement[0].style.display = "none";
   }
 
   render() {

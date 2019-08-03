@@ -15,7 +15,7 @@ export default function(state = initalState, action) {
     case FETCH_COMMENTS:
       return {
         ...state,
-        comments: action.payload
+        comments: state.comments.concat(action.payload)
       };
     default:
       return state;
