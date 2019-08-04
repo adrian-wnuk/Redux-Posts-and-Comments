@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { addComment } from "../actions/postActions";
+import nextId from "react-id-generator";
 
 export class Commentform extends Component {
   constructor(props) {
@@ -25,7 +26,7 @@ export class Commentform extends Component {
 
     const comment = {
       postId: this.props.postID,
-      id: 111,
+      id: nextId(),
       name: this.state.name,
       email: this.state.email,
       body: this.state.body
