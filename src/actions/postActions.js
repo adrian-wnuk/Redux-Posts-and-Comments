@@ -22,20 +22,10 @@ export const fetchComments = postID => dispatch => {
     );
 };
 
-export const addComment = () => dispatch => {
-  fetch("https://jsonplaceholder.typicode.com/posts", {
-    method: "POST",
-    headers: {
-      "content-type": "application/json"
-    },
-    body: JSON.stringify(postData)
-  })
-    .then(res => res.json())
-    .then(comment =>
-      dispatch({
-        type: ADD_COMMENT,
-        payload: comment
-      })
-    );
-  console.log(postID);
+export const addComment = commentData => dispatch => {
+  console.log(`add comment action: ${commentData}`);
+  dispatch({
+    type: ADD_COMMENT,
+    payload: commentData
+  });
 };

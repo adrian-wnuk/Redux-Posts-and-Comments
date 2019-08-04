@@ -44,7 +44,7 @@ class Comments extends Component {
           Show comments
         </button>
         {comments}
-        <Commentform />
+        <Commentform postID={this.props.postID} />
       </div>
     );
   }

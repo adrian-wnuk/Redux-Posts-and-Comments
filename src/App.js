@@ -4,7 +4,6 @@ import "./App.css";
 import { Provider } from "react-redux";
 
 import Posts from "./components/Posts";
-import Postform from "./components/Postform";
 
 import store from "./store";
 
@@ -15,8 +14,6 @@ function App() {
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
         </header>
-        <Postform />
-        <hr />
         <Posts />
       </div>
     </Provider>
