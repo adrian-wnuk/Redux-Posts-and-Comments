@@ -11,7 +11,7 @@ class Comments extends Component {
 
     this.onClick = this.onClick.bind(this);
   }
-  // show comments and hide button
+  // show comments, add comment form and hide button
   onClick(event) {
     event.preventDefault();
     this.props.fetchComments(this.props.postID);
@@ -19,6 +19,10 @@ class Comments extends Component {
       `button-${this.props.postID}`
     );
     buttonElement[0].style.display = "none";
+    const commentForm = document.getElementsByClassName(
+      `Comment-form-${this.props.postID}`
+    );
+    commentForm[0].style.display = "inline";
   }
 
   render() {
