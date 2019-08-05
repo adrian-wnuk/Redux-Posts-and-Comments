@@ -30,12 +30,6 @@ class Comments extends Component {
       `Comment-form-${this.props.postID}`
     );
     commentForm[0].style.display = "inline";
-
-    //hide loader
-    // const loader = document.getElementsByClassName(
-    //   `loader-${this.props.postID}`
-    // );
-    // loader[0].style.display = "none";
   }
 
   render() {
