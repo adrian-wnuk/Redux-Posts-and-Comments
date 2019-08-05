@@ -1,11 +1,11 @@
-# Start aplikacji:
+## Start aplikacji:
 ```
 cd ~/ścieżka/do/repozytorium
 npm install
 npm start
 ```
 
-# Uwagi
+## Uwagi
 
 Oczekiwany rezultat został osiągnięty. 
 Z dodatków elementów zaimplementowałem informację tekstową podczas ładowania komentarzy.
