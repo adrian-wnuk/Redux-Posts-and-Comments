@@ -1,7 +1,7 @@
 Start aplikacji:
-cd ~/ścieżka/do/repozytorium
+`cd ~/ścieżka/do/repozytorium
 npm install
-npm start
+npm start`
 
 Oczekiwany rezultat został osiągnięty. 
 Z dodatków elementów zaimplementowałem informację tekstową podczas ładowania komentarzy.
