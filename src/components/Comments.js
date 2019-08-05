@@ -32,10 +32,10 @@ class Comments extends Component {
     commentForm[0].style.display = "inline";
 
     //hide loader
-    const loader = document.getElementsByClassName(
-      `loader-${this.props.postID}`
-    );
-    loader[0].style.display = "none";
+    // const loader = document.getElementsByClassName(
+    //   `loader-${this.props.postID}`
+    // );
+    // loader[0].style.display = "none";
   }
 
   render() {
@@ -50,6 +50,7 @@ class Comments extends Component {
           </div>
         );
       }
+      return null;
     });
     return (
       <div>
