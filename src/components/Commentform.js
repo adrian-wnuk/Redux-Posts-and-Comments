@@ -24,6 +24,7 @@ export class Commentform extends Component {
   onSubmit(e) {
     e.preventDefault();
 
+    //add comment
     const comment = {
       postId: this.props.postID,
       id: nextId(),
@@ -32,8 +33,14 @@ export class Commentform extends Component {
       body: this.state.body
     };
 
-    console.log(comment);
     this.props.addComment(comment);
+
+    //clearing the inputs
+    this.setState({
+      name: "",
+      email: "",
+      body: ""
+    });
   }
 
   render() {
@@ -50,6 +57,7 @@ export class Commentform extends Component {
             name="name"
             onChange={this.onChange}
             value={this.state.name}
+            required
           />
         </div>
         <div>
@@ -59,6 +67,7 @@ export class Commentform extends Component {
             name="email"
             onChange={this.onChange}
             value={this.state.email}
+            required
           />
         </div>
         <div>
@@ -68,6 +77,7 @@ export class Commentform extends Component {
             name="body"
             onChange={this.onChange}
             value={this.state.body}
+            required
           />
         </div>
         <button type="submit">Submit</button>

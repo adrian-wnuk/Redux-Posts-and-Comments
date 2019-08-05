@@ -4,6 +4,7 @@ import { connect } from "react-redux";
 import { fetchComments } from "../actions/postActions";
 
 import Commentform from "./Commentform";
+import Loader from "./Loader";
 
 class Comments extends Component {
   constructor(props) {
@@ -11,18 +12,30 @@ class Comments extends Component {
 
     this.onClick = this.onClick.bind(this);
   }
-  // show comments, add comment form and hide button
+
   onClick(event) {
     event.preventDefault();
+
+    // show comments
     this.props.fetchComments(this.props.postID);
+
+    //hide show comments button
     const buttonElement = document.getElementsByClassName(
       `button-${this.props.postID}`
     );
     buttonElement[0].style.display = "none";
+
+    //show add comment form
     const commentForm = document.getElementsByClassName(
       `Comment-form-${this.props.postID}`
     );
     commentForm[0].style.display = "inline";
+
+    //hide loader
+    const loader = document.getElementsByClassName(
+      `loader-${this.props.postID}`
+    );
+    loader[0].style.display = "none";
   }
 
   render() {
@@ -47,6 +60,7 @@ class Comments extends Component {
         >
           Show comments
         </button>
+        <Loader postID={this.props.postID} />
         {comments}
         <Commentform postID={this.props.postID} />
       </div>

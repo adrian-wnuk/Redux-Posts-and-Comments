@@ -23,7 +23,6 @@ export const fetchComments = postID => dispatch => {
 };
 
 export const addComment = commentData => dispatch => {
-  console.log(`add comment action: ${commentData}`);
   dispatch({
     type: ADD_COMMENT,
     payload: commentData
