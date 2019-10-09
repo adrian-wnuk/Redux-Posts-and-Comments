@@ -1,3 +1,26 @@
+ENG
+
+## Info
+Goal: Fetching posts, comments from fake API using Redux also minor functionalities like adding comment and loading information.
+
+Stack used: HTML, CSS, ES6, React, React-Redux,
+Redux, Redux-Thunk
+
+## Application Start:
+```
+cd ~/path/to/repo
+npm install
+npm start
+```
+
+PL
+
+## Info
+Cel: Zaciągnięcie postów, komentarzy z fake API przy użyciu biblioteki Redux, do tego kilka pomniejszych funkcjonalności takich jak możliwość dodania komentarza i informacja o ładowaniu.
+
+Użyte technologie: HTML, CSS, ES6, React, React-Redux,
+Redux, Thunk
+
 ## Start aplikacji:
 ```
 cd ~/ścieżka/do/repozytorium
