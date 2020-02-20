@@ -13,6 +13,8 @@ npm install
 npm start
 ```
 
+*Needs Redux Dev Tools and React Developer Tools installed in browser!*
+
 PL
 
 ## Info
@@ -34,3 +36,5 @@ Oczekiwany rezultat został osiągnięty.
 Z dodatków elementów zaimplementowałem informację tekstową podczas ładowania komentarzy.
 
 Nie użyłem biblioteki Immutable, ze względu na to, że wyklucza użycie spread operatora. Starałem się pisać funkcję przy użyciu metod i składni, które pozwalają na zachowanie czystości funkcji. W roli middleware użyłem redux-thunk.
+
+*Wymaga Redux Dev Tools i React Developer Tools zainstalowanego w przeglądarce!*
